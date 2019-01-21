@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Guest Book</string>
+
+    <string name="confirm_pass">Confirm password</string>
+    <string name="create_acc">Create your account</string>
+    <string name="have_acc">Already have an account?</string>
+    <string name="email">Email</string>
+    <string name="input_answer">Input answer</string>
+    <string name="log_in">Log In</string>
+    <string name="make_comment">Make comment</string>
+    <string name="name">Name</string>
+    <string name="no_acc">Have no account?</string>
+    <string name="password">"Password (at least 6 chars)"</string>
+    <string name="sign_in">Sign In</string>
+    <string name="title">Title</string>
+    <string name="welcome">Welcome!</string>
+    <string name="write_post">Write post</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="24dp"
+              android:paddingRight="24dp"
+>
+
+    <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvAnswer"
+            android:textSize="18sp"
+            android:textColor="@color/text_dark"
+            android:text="sample answer"
+    />
+
+    <TextView
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvAnswerDate"
+            android:textSize="12sp"
+            android:textColor="@color/text_gray"
+            android:text="sample date"
+            android:layout_margin="4dp"
+    />
+
+<!--    <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bg_gray"
+    />-->
+
+</LinearLayout>
