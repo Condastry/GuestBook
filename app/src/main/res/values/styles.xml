@@ -11,8 +11,9 @@
 
     
     <style name="ColoredButton" parent="Base.Widget.AppCompat.Button.Colored">
-        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="colorButtonNormal">@color/bg_card_pushed</item>
         <item name="android:padding">16dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="BorderedInputLayout" parent="Widget.Design.TextInputLayout">

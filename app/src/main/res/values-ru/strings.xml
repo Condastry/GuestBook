@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Гостевая книга</string>
+
+    <string name="confirm_pass">Подтвердите пароль</string>
+    <string name="create_acc">Создайте аккаунт</string>
+    <string name="have_acc">Уже есть аккаунт?</string>
+    <string name="email">Email</string>
+    <string name="input_answer">Введите ответ</string>
+    <string name="sign_in">Войти</string>
+    <string name="make_comment">Отправить комментарий</string>
+    <string name="name">Имя</string>
+    <string name="no_acc">Нет аккаунта?</string>
+    <string name="password">"Пароль (хотя бы 6 символов)"</string>
+    <string name="register">Зарегестрироваться</string>
+    <string name="title">Заглавие</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="write_comment">Напишите комментарий</string>
 </resources>

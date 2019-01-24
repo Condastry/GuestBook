@@ -1,7 +1,7 @@
 package com.nevermore.guestbook.retrofit
 
-import com.nevermore.guestbook.data.bodies.LoginBody
 import com.nevermore.guestbook.data.User
+import com.nevermore.guestbook.data.bodies.LoginRequestBody
 import io.reactivex.Observable
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -24,7 +24,7 @@ interface PusherAuthService {
 
     @POST("auth/login")
     fun login(
-        @Body loginBody: LoginBody
+        @Body loginBody: LoginRequestBody
     ): Observable<User>
 
 }

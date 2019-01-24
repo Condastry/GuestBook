@@ -9,6 +9,7 @@ import com.nevermore.guestbook.mvvm.repositories.AuthRepository
 import com.nevermore.guestbook.mvvm.viewmodels.AuthViewModel
 import com.nevermore.guestbook.retrofit.PusherAuthService
 import com.nevermore.guestbook.retrofit.PusherServiceProvider
+import com.nevermore.guestbook.tools.isGone
 import kotlinx.android.synthetic.main.fragment_auth.*
 import java.io.File
 
@@ -45,10 +46,10 @@ class AuthFragment : BaseFragment() {
     private fun setupModeObserver() {
         vm.isLogin.observe(this, Observer { isLogin ->
             tvTitle.text = if (isLogin!!) getString(R.string.welcome) else getString(R.string.create_acc)
-            tvSignIn.text = if (isLogin) getString(R.string.sign_in) else getString(R.string.log_in)
-            inputConfirmPass.visibility = if (isLogin) View.GONE else View.VISIBLE
-            inputName.visibility = if (isLogin) View.GONE else View.VISIBLE
-            btnLogin.text = if (isLogin) getString(R.string.log_in) else getString(R.string.sign_in)
+            tvSignIn.text = if (isLogin) getString(R.string.register) else getString(R.string.sign_in)
+            inputConfirmPass.isGone(isLogin)
+            inputName.isGone(isLogin)
+            btnLogin.text = if (isLogin) getString(R.string.sign_in) else getString(R.string.register)
             tvHaveAcc.text = if (isLogin) getString(R.string.no_acc) else getString(R.string.have_acc)
         })
     }

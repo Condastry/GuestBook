@@ -11,45 +11,44 @@ import retrofit2.Response
 import ru.terrakok.cicerone.Router
 
 abstract class BaseRepository(
-    protected val router : Router,
-    protected val prefs : AppPreferences
-){
-
+    protected val router: Router,
+    protected val prefs: AppPreferences
+) {
     protected val subscriptions = CompositeDisposable()
 
     protected fun executeDefaultRequest(
-        request: Observable<Response<ResponseBody>>, onResponse : () -> Unit = {}
+        request: Observable<Response<ResponseBody>>, onResponse: () -> Unit = {}
     ) {
         subscriptions.add(
             request
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                   onResponse.invoke()
+                    onResponse.invoke()
                 }, {
                     showMessage("Reguest error!")
                 })
         )
     }
 
-    protected open fun showMessage(message : String){
+    protected open fun showMessage(message: String) {
         router.showSystemMessage(message)
     }
 
-    protected open fun checkIsEmpty(value : String) : Boolean{
-        if(value.isEmpty()){
+    protected open fun checkIsEmpty(value: String): Boolean {
+        if (value.isEmpty()) {
             showMessage("Please, input all values")
             return true
         }
         return false
     }
 
-    fun logout(){
+    fun logout() {
         prefs.clearUserCredetials()
         router.newRootScreen(MainScreens.AUTH_SCREEN)
     }
 
-    open fun clear(){
+    open fun clear() {
         subscriptions.clear()
     }
 }

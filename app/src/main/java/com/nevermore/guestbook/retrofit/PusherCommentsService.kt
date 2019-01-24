@@ -1,8 +1,9 @@
 package com.nevermore.guestbook.retrofit
 
-import com.nevermore.guestbook.data.*
-import com.nevermore.guestbook.data.bodies.AnswerBody
-import com.nevermore.guestbook.data.bodies.CommentBody
+import com.nevermore.guestbook.data.Answer
+import com.nevermore.guestbook.data.bodies.AnswerRequestBody
+import com.nevermore.guestbook.data.bodies.CommentRequestBody
+import com.nevermore.guestbook.data.bodies.DataRequestBody
 import io.reactivex.Observable
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -14,11 +15,11 @@ interface PusherCommentsService {
     fun getComments(
         @Query("api_token") apiToken: String,
         @Query("page") page: Int
-    ): Observable<Data>
+    ): Observable<DataRequestBody>
 
     @GET("comment/{commentID}/answer/")
     fun getAnswersFor(
-        @Path("commentID") commentID : Int,
+        @Path("commentID") commentID: Int,
         @Query("api_token") apiToken: String
 
     ): Observable<List<Answer>>
@@ -26,13 +27,13 @@ interface PusherCommentsService {
 
     @POST("comment/{commentID}/answer/")
     fun storeAnswer(
-        @Path("commentID") commentID : Int,
-        @Body answerBody: AnswerBody
+        @Path("commentID") commentID: Int,
+        @Body answerBody: AnswerRequestBody
     ): Observable<Response<ResponseBody>>
 
     @POST("comment/")
     fun storeCommnet(
-        @Body commentBody: CommentBody
+        @Body commentBody: CommentRequestBody
     ): Observable<Response<ResponseBody>>
 
 }

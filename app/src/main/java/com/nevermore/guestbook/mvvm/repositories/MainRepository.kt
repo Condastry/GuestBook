@@ -7,15 +7,14 @@ import ru.terrakok.cicerone.Router
 
 class MainRepository(
     val cicerone: Cicerone<Router>,
-    prefs : AppPreferences
-) : BaseRepository(cicerone.router, prefs){
+    prefs: AppPreferences
+) : BaseRepository(cicerone.router, prefs) {
 
     init {
-        if(prefs.userCredentials.apiToken.isEmpty()){
+        if (prefs.userCredentials.apiToken.isEmpty()) {
             router.newRootScreen(MainScreens.AUTH_SCREEN)
-        }else{
+        } else {
             router.newRootScreen(MainScreens.POSTS_SCREEN)
         }
     }
-
 }

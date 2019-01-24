@@ -11,7 +11,7 @@ import com.nevermore.guestbook.mvvm.ui.PostsFragment
 import ru.terrakok.cicerone.android.SupportFragmentNavigator
 import ru.terrakok.cicerone.commands.Command
 
-class MainNavigator(private val activity: AppCompatActivity, containerID : Int) :
+class MainNavigator(private val activity: AppCompatActivity, containerID: Int) :
     SupportFragmentNavigator(activity.supportFragmentManager, containerID) {
 
     override fun exit() {

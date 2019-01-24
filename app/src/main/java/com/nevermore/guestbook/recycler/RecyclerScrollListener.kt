@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView
 
 class RecyclerScrollListener : RecyclerView.OnScrollListener() {
 
-    var loadItemEvent : (() -> Unit)? = null
+    var loadItemEvent: (() -> Unit)? = null
 
     override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         super.onScrolled(recyclerView, dx, dy)
@@ -22,6 +22,5 @@ class RecyclerScrollListener : RecyclerView.OnScrollListener() {
         ) {
             loadItemEvent?.invoke()
         }
-
     }
 }

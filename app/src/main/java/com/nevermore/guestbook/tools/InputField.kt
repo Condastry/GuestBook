@@ -17,7 +17,7 @@ class InputField @JvmOverloads constructor(
     val layout: TextInputLayout
     val editText: TextInputEditText
 
-    var text : String
+    var text: String
         get() = editText.text?.toString() ?: ""
         set(value) = editText.setText(value)
 

@@ -10,7 +10,7 @@ import com.nevermore.guestbook.retrofit.PusherCommentsService
 import com.nevermore.guestbook.retrofit.PusherServiceProvider
 import kotlinx.android.synthetic.main.fragment_make_comment.*
 
-class MakeCommentFragment : BaseFragment(){
+class MakeCommentFragment : BaseFragment() {
     override val contentLayoutID = R.layout.fragment_make_comment
     override val toolbarTitle = "Make comment"
     private lateinit var vm: MakeCommentViewModel
@@ -21,7 +21,6 @@ class MakeCommentFragment : BaseFragment(){
         vm.initRepository(
             MakeCommentRepository(
                 PusherServiceProvider.createService(PusherCommentsService::class.java),
-                mainVM.publicSocet!!,
                 mainVM.router,
                 mainVM.prefs!!
             )

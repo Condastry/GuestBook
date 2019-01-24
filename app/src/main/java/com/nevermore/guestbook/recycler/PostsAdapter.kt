@@ -6,9 +6,9 @@ import com.nevermore.guestbook.data.Answer
 import com.nevermore.guestbook.data.Comment
 
 
-class PostsAdapter(private val isAdmin : Boolean) : RecyclerView.Adapter<PostViewHolder>() {
+class PostsAdapter(private val isAdmin: Boolean) : RecyclerView.Adapter<PostViewHolder>() {
     var items = mutableListOf<Comment>()
-    var sendAnswer: ((answer : Answer) -> Unit)? = null
+    var sendAnswer: ((answer: Answer) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         return PostViewHolder(parent, isAdmin).apply {

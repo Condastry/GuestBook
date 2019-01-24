@@ -1,7 +1,7 @@
 package com.nevermore.guestbook.mvvm.repositories
 
 import com.nevermore.guestbook.app.AppPreferences
-import com.nevermore.guestbook.data.bodies.LoginBody
+import com.nevermore.guestbook.data.bodies.LoginRequestBody
 import com.nevermore.guestbook.data.User
 import com.nevermore.guestbook.navigation.MainScreens
 import com.nevermore.guestbook.retrofit.PusherAuthService
@@ -22,10 +22,10 @@ class AuthRepository(
 ) : BaseRepository(router, prefs) {
 
     fun login(email: String, password: String) {
-        if(checkIsEmpty(email)) return
-        if(checkIsEmpty(password)) return
+        if (checkIsEmpty(email)) return
+        if (checkIsEmpty(password)) return
 
-        authRequest(authService.login(LoginBody(email, password)))
+        authRequest(authService.login(LoginRequestBody(email, password)))
     }
 
     fun register(name: String, email: String, password: String, confirmPassword: String, image: File) {
@@ -33,16 +33,16 @@ class AuthRepository(
             showMessage("Invalid password!")
             return
         }
-       if(checkIsEmpty(name)) return
-       if(checkIsEmpty(email)) return
-       if(checkIsEmpty(password)) return
+        if (checkIsEmpty(name)) return
+        if (checkIsEmpty(email)) return
+        if (checkIsEmpty(password)) return
 
         val imageBody = MultipartBody.Part.createFormData(
             "avatar", image.name,
             RequestBody.create(MediaType.parse("multipart/form-data"), image)
         )
 
-       authRequest(authService.register(toBody(name), toBody(email), toBody(password), imageBody))
+        authRequest(authService.register(toBody(name), toBody(email), toBody(password), imageBody))
     }
 
     private fun authRequest(request: Observable<User>) {

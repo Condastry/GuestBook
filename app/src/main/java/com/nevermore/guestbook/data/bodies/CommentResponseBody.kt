@@ -1,15 +1,16 @@
-package com.nevermore.guestbook.data
+package com.nevermore.guestbook.data.bodies
 
 import com.google.gson.annotations.SerializedName
 
-class Answer(
+class CommentResponseBody(
     var id: Int = 0,
-    @SerializedName("comment_id")
-    var commentId: Int = 0,
+    @SerializedName("user_id")
+    var userID: Int = 0,
+    var title: String = "",
     var message: String = "",
     @SerializedName("created_at")
     var createdAt: String = "",
     @SerializedName("updated_at")
-    var updatedAt: String = "",
-    var isPushed: Boolean = false
+    var updatedAt: String = ""
 )
+

@@ -10,13 +10,13 @@ object PusherServiceProvider {
     private val BASE_URL = "http://pusher.cpl.by/api/v1/"
 
     private val builder = Retrofit.Builder().baseUrl(BASE_URL)
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create())
 
     private fun getClient(): OkHttpClient {
         return OkHttpClient.Builder()
-                .addNetworkInterceptor(StethoInterceptor())
-                .build()
+            .addNetworkInterceptor(StethoInterceptor())
+            .build()
     }
 
     fun <S> createService(serviceClass: Class<S>): S {
